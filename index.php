@@ -1,5 +1,13 @@
 <?php 
-    echo 'hello from PHP';
+    
+    define('NAME', 'Yoshi');
+    
+    $name = 'Luigi';
+    $age = 30;    
+
+    // define('NAME', 'Toad'); // don't do anithing
+    // NAME = 'Peach'; // syntax error that crashes app
+    $name = 'Mario';
 ?>
 
 <html lang="en">
@@ -10,7 +18,11 @@
 </head>
 <body>
 
-    <h1><?php echo 'Hello again'; ?></h1>
+    <h1>User Profile Page</h1>
+
+    <div><?php echo NAME; ?></div>
+    <div><?php echo $name; ?></div>
+    <div><?php echo $age; ?></div>
     
 </body>
 </html>
