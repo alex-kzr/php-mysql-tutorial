@@ -1,13 +1,43 @@
 <?php 
     
-    define('NAME', 'Yoshi');
+    $stringOne = 'my email is ';
     
-    $name = 'Luigi';
-    $age = 30;    
+    $stringTwo = 'alex@xxx.com';
+    echo $stringOne . $stringTwo;
 
-    // define('NAME', 'Toad'); // don't do anithing
-    // NAME = 'Peach'; // syntax error that crashes app
+    echo '<br>';
+
     $name = 'Mario';
+    echo 'Hey, my name is ' . $name;
+    echo '<br>';
+    echo "Hey, my name is $name";
+
+    echo '<br>';
+
+    // echo "the ninja screamed "whaaaaa""; // crashes the app
+    echo "the ninja screamed \"whaaaaa\""; // work if escape " char with \
+    echo '<br>';
+    echo 'the ninja screamed "whaaaaa"'; // work also
+
+    echo '<br>';
+
+    echo $name[0];
+
+    echo '<br>';
+
+    echo strlen($name);
+
+    echo '<br>';
+
+    echo strtoupper($name);
+
+    echo '<br>';
+
+    echo strtolower($name);
+
+    echo '<br>';
+
+    echo str_replace('M', 'W', $name);
 ?>
 
 <html lang="en">
@@ -17,12 +47,6 @@
     <title>PHP Tutorial</title>
 </head>
 <body>
-
-    <h1>User Profile Page</h1>
-
-    <div><?php echo NAME; ?></div>
-    <div><?php echo $name; ?></div>
-    <div><?php echo $age; ?></div>
     
 </body>
 </html>
