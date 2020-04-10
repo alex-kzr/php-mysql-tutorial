@@ -1,43 +1,57 @@
 <?php 
     
-    $stringOne = 'my email is ';
+    $radius = 25;
+    $pi = 3.14;
     
-    $stringTwo = 'alex@xxx.com';
-    echo $stringOne . $stringTwo;
+    echo 'arithmetic operators - +, -, *, /, %, **';
+    echo '<br>';
+    echo $pi * $radius**2;
 
     echo '<br>';
 
-    $name = 'Mario';
-    echo 'Hey, my name is ' . $name;
+    echo 'order of operation - B I D M A S:';
     echo '<br>';
-    echo "Hey, my name is $name";
-
-    echo '<br>';
-
-    // echo "the ninja screamed "whaaaaa""; // crashes the app
-    echo "the ninja screamed \"whaaaaa\""; // work if escape " char with \
-    echo '<br>';
-    echo 'the ninja screamed "whaaaaa"'; // work also
+    // Brackets(), Indices**, Division/, Multiplication*, Addition+, Subtraction-
+    echo 2 * (4 + 9) / 3;
 
     echo '<br>';
 
-    echo $name[0];
+    echo 'increment & decrement operators:';
+    echo '<br>';
+    echo $radius++;
+    echo '<br>';
+    echo $radius;
 
     echo '<br>';
 
-    echo strlen($name);
+    echo ++$radius;
+    echo '<br>';
+    echo $radius;
 
     echo '<br>';
 
-    echo strtoupper($name);
-
+    echo 'shorthand operators:';
+    echo '<br>';
+    $age = 20;
+    $age +=10; // $age = $age + 10;
+    echo $age;
+    echo '<br>';
+    $age -=5; // $age = $age - 5;
+    echo $age;
+    echo '<br>';
+    $age *= 2; // $age = $age * 2;
+    echo $age;
+    
     echo '<br>';
 
-    echo strtolower($name);
-
+    echo 'number functions:';
     echo '<br>';
+    echo floor($pi);
+    echo '<br>';
+    echo ceil($pi);
+    echo '<br>';
+    echo pi();
 
-    echo str_replace('M', 'W', $name);
 ?>
 
 <html lang="en">
