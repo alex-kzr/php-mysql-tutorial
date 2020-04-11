@@ -1,38 +1,41 @@
 <?php 
     
-    echo 'multidimentional arrays:';
+    echo 'loops:';
     echo '<br>';
 
-    $blogs  = [
-        ['mario party', 'mario', 'lorem', 30], 
-        ['mario kart cheats', 'toad', 'lorem', 25],
-        ['zelda hidden chests', 'link', 'lorem', 50]
-    ];
-    print_r($blogs);
-    echo '<br>';
-    print_r($blogs[1]);
-    echo '<br>';
-    print_r($blogs[1][1]);
+    $ninjas = ['shaun', 'ryu', 'yoshi'];
+    for($i = 0; $i < count($ninjas); $i++){
+        echo $ninjas[$i] . ' /';
+    }
     echo '<br>';
 
-    $blogs2  = [
-        ['title' => 'mario party', 'author' => 'mario', 'content' => 'lorem', 'likes' => 30], 
-        ['title' => 'mario kart cheats', 'author' => 'toad', 'content' => 'lorem', 'likes' => 25],
-        ['title' => 'zelda hidden chests', 'author' => 'link', 'content' => 'lorem', 'likes' => 50]
+    foreach($ninjas as $ninja){
+        echo $ninja . ' |';
+    }
+    echo '<br>';
+    
+    $products = [
+		['name' => 'shiny star', 'price' => 20],
+		['name' => 'green shell', 'price' => 10],
+		['name' => 'red shell', 'price' => 15],
+		['name' => 'gold coin', 'price' => 5],
+		['name' => 'lightning bolt', 'price' => 40],
+		['name' => 'banana skin', 'price' => 2]
     ];
     
-    print_r($blogs2[1]['author']);
+    foreach($products as $product){
+        echo $product['name'] . ' - ' . $product['price'];
+        echo '<br>';
+    }
     echo '<br>';
 
-    echo count($blogs2);
-    echo '<br>';
+    $i = 0;
+    while($i < count($products)){
+        echo $products[$i]['name'];
+        echo '<br>';
+        $i++;
+    }
 
-    $blogs2[] = ['title'=>'castle party', 'author'=>'peach', 'content'=>'lorem', 'likes'=>100];
-    print_r($blogs2);
-    echo '<br>';
-
-    $poped = array_pop($blogs2);  // take last one element in array
-    print_r($poped);
 
 ?>
 
@@ -43,6 +46,12 @@
     <title>PHP Tutorial</title>
 </head>
 <body>
-    
+    <h1>Products</h1>
+    <ul>
+        <?php foreach($products as $product){ ?>
+            <h3><?php echo $product['name']; ?></h3>
+            <p>$<?php echo $product['price']; ?></p>
+        <?php } ?>
+    </ul>
 </body>
 </html>
