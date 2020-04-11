@@ -1,68 +1,38 @@
 <?php 
     
-    echo 'indexed arrays:';
-    echo '<br>';
-    $peopleOne = ['alex', 'crystal', 'ryu'];
-    echo $peopleOne[1];
-
+    echo 'multidimentional arrays:';
     echo '<br>';
 
-    $peopleTwo = array('ken', 'chun-li');
-    echo $peopleTwo[1];
-
+    $blogs  = [
+        ['mario party', 'mario', 'lorem', 30], 
+        ['mario kart cheats', 'toad', 'lorem', 25],
+        ['zelda hidden chests', 'link', 'lorem', 50]
+    ];
+    print_r($blogs);
     echo '<br>';
+    print_r($blogs[1]);
+    echo '<br>';
+    print_r($blogs[1][1]);
+    echo '<br>';
+
+    $blogs2  = [
+        ['title' => 'mario party', 'author' => 'mario', 'content' => 'lorem', 'likes' => 30], 
+        ['title' => 'mario kart cheats', 'author' => 'toad', 'content' => 'lorem', 'likes' => 25],
+        ['title' => 'zelda hidden chests', 'author' => 'link', 'content' => 'lorem', 'likes' => 50]
+    ];
     
-    $ages = [20, 30, 40, 50];
-    print_r($ages);
-
+    print_r($blogs2[1]['author']);
     echo '<br>';
 
-    $ages[1] = 25;
-    print_r($ages);
-
-    echo '<br>';
-    
-    $ages[] = 60;
-    print_r($ages);
-
-    echo '<br>';
-    
-    array_push($ages, 70);
-    print_r($ages);
-
-    echo '<br>';
-    
-    echo count($ages);
-
-    echo '<br>';
-    
-    $peopleThree = array_merge($peopleOne, $peopleTwo);
-    print_r($peopleThree);
-
+    echo count($blogs2);
     echo '<br>';
 
-    echo 'associative arrays (key & value pairs):';
-
+    $blogs2[] = ['title'=>'castle party', 'author'=>'peach', 'content'=>'lorem', 'likes'=>100];
+    print_r($blogs2);
     echo '<br>';
 
-    $ninjasOne = ['alex'=>'black', 'mario'=>'red', 'luigi'=>'white'];
-    echo $ninjasOne['mario'];
-    echo '<br>';
-    print_r($ninjasOne);
-
-    echo '<br>';
-
-    $ninjasTwo = array('bowser'=>'green', 'peach'=>'yellow');
-    $ninjasTwo['toad'] = 'pink';
-    print_r($ninjasTwo);
-
-    echo '<br>';
-
-    echo count($ninjasOne);
-
-    echo '<br>';
-    $ninjasThree = array_merge($ninjasOne, $ninjasTwo);
-    print_r($ninjasThree);
+    $poped = array_pop($blogs2);  // take last one element in array
+    print_r($poped);
 
 ?>
 
