@@ -1,56 +1,68 @@
 <?php 
     
-    $radius = 25;
-    $pi = 3.14;
+    echo 'indexed arrays:';
+    echo '<br>';
+    $peopleOne = ['alex', 'crystal', 'ryu'];
+    echo $peopleOne[1];
+
+    echo '<br>';
+
+    $peopleTwo = array('ken', 'chun-li');
+    echo $peopleTwo[1];
+
+    echo '<br>';
     
-    echo 'arithmetic operators - +, -, *, /, %, **';
-    echo '<br>';
-    echo $pi * $radius**2;
+    $ages = [20, 30, 40, 50];
+    print_r($ages);
 
     echo '<br>';
 
-    echo 'order of operation - B I D M A S:';
-    echo '<br>';
-    // Brackets(), Indices**, Division/, Multiplication*, Addition+, Subtraction-
-    echo 2 * (4 + 9) / 3;
+    $ages[1] = 25;
+    print_r($ages);
 
     echo '<br>';
-
-    echo 'increment & decrement operators:';
-    echo '<br>';
-    echo $radius++;
-    echo '<br>';
-    echo $radius;
-
-    echo '<br>';
-
-    echo ++$radius;
-    echo '<br>';
-    echo $radius;
-
-    echo '<br>';
-
-    echo 'shorthand operators:';
-    echo '<br>';
-    $age = 20;
-    $age +=10; // $age = $age + 10;
-    echo $age;
-    echo '<br>';
-    $age -=5; // $age = $age - 5;
-    echo $age;
-    echo '<br>';
-    $age *= 2; // $age = $age * 2;
-    echo $age;
     
+    $ages[] = 60;
+    print_r($ages);
+
+    echo '<br>';
+    
+    array_push($ages, 70);
+    print_r($ages);
+
+    echo '<br>';
+    
+    echo count($ages);
+
+    echo '<br>';
+    
+    $peopleThree = array_merge($peopleOne, $peopleTwo);
+    print_r($peopleThree);
+
     echo '<br>';
 
-    echo 'number functions:';
+    echo 'associative arrays (key & value pairs):';
+
     echo '<br>';
-    echo floor($pi);
+
+    $ninjasOne = ['alex'=>'black', 'mario'=>'red', 'luigi'=>'white'];
+    echo $ninjasOne['mario'];
     echo '<br>';
-    echo ceil($pi);
+    print_r($ninjasOne);
+
     echo '<br>';
-    echo pi();
+
+    $ninjasTwo = array('bowser'=>'green', 'peach'=>'yellow');
+    $ninjasTwo['toad'] = 'pink';
+    print_r($ninjasTwo);
+
+    echo '<br>';
+
+    echo count($ninjasOne);
+
+    echo '<br>';
+    $ninjasThree = array_merge($ninjasOne, $ninjasTwo);
+    print_r($ninjasThree);
 
 ?>
 
