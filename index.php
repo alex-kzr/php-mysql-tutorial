@@ -3,24 +3,21 @@
     echo 'functions:';
     echo '<br>';
 
-    $products = [
-		['name' => 'shiny star', 'price' => 20],
-		['name' => 'green shell', 'price' => 10],
-		['name' => 'red shell', 'price' => 15],
-		['name' => 'gold coin', 'price' => 5],
-		['name' => 'lightning bolt', 'price' => 40],
-		['name' => 'banana skin', 'price' => 2]
-	];
+    function sayHello($name = 'alex', $time = 'morning'){
+        echo "good $time $name";
+    }    
 
-    foreach($products as $product){
-        if($product['name'] === 'lightning bolt'){
-            break;
-        }
-        if($product['price'] > 15){
-            continue;
-        }
-        echo $product['name'] . '<br>';
+    sayHello('mario', 'evening');
+    echo '<br>';
+
+    function formatProduct($product){
+        echo "{$product['name']} costs \${$product['price']} to buy <br>";
     }
+
+    formatProduct(['name'=>'gold star', 'price'=>20]);
+    $formatted = formatProduct(['name'=>'gold star', 'price'=>20]);
+    echo '<br>';
+    echo $formatted;
 
 ?>
 
