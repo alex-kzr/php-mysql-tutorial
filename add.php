@@ -1,40 +1,37 @@
 <?php 
   
-    // if(isset($_GET['submit'])){
-    //     echo $_GET['email'];
-    //     echo $_GET['title'];
-    //     echo $_GET['ingredients'];
-    // }
+    $email = $title = $ingredients = '';
+    $errors = ['email'=>'', 'title'=>'', 'ingredients'=>''];
 
     if(isset($_POST['submit'])){
         
         // check email
         if(empty($_POST['email'])){
-            echo 'An email is required <br>';
+            $errors['email'] = 'An email is required <br>';
         }else{
             $email = htmlspecialchars($_POST['email']);
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                echo 'email must be a valid email address';
+                $errors['email'] = 'email must be a valid email address';
             }
         }
         
         // check title
         if(empty($_POST['title'])){
-            echo 'A title is required <br>';
+            $errors['title'] = 'A title is required <br>';
         }else{
             $title = htmlspecialchars($_POST['title']);
             if(!preg_match('/^[a-zA-Z\s]+$/', $title)){
-                echo 'Title must be letters and spaces only';
+                $errors['title'] = 'Title must be letters and spaces only';
             }
         }
         
         // check ingredients
         if(empty($_POST['ingredients'])){
-            echo 'At least one ingredient is required <br>';
+            $errors['ingredients'] =  'At least one ingredient is required <br>';
         }else{
             $ingredients = htmlspecialchars($_POST['ingredients']);
             if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
-                echo 'Ingredients must be a comma separated list';
+                $errors['ingredients'] = 'Ingredients must be a comma separated list';
             }
         }
         
@@ -54,15 +51,18 @@
         <form action="add.php" method="POST" class="white">
             <div class="input-field">
                 <label for="email">Your Email</label>
-                <input type="text" name="email" id="email" class="validate">                
+                <input type="text" name="email" id="email" class="validate" value="<?php echo htmlspecialchars($email); ?>">
+                <div class="red-text"><?php echo $errors['email']; ?></div>
             </div>
             <div class="input-field">
                 <label for="title">Pizza title</label>
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" value="<?php echo htmlspecialchars($title); ?>">
+                <div class="red-text"><?php echo $errors['title']; ?></div>
             </div>
             <div class="input-field">
                 <label for="ingredients">Ingredients (comma separated)</label>
-                <input type="text" name="ingredients" id="ingredients">
+                <input type="text" name="ingredients" id="ingredients" value="<?php echo htmlspecialchars($ingredients); ?>">
+                <div class="red-text"><?php echo $errors['ingredients']; ?></div>
             </div>
             
             <div class="center">
