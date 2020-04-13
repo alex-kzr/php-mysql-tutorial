@@ -1,54 +1,21 @@
 <?php 
     
-    echo 'variable scope:';
+    echo 'include:';
     echo '<br>';
 
-    echo 'local vars:';
+    include('some_other_php_file.php');
+    include('some_other_php_file2.php'); // do not crash down code if file missing
+
+
+    echo 'require:';
     echo '<br>';
 
-    function myFunc(){
-        $price = 10;
-        echo $price;
-    }    
-    myFunc();
-    echo $price; // undefined variable in this scope - looking for global var
-    echo '<br>';
+    require('some_other_php_file.php');
+    // require('some_other_php_file2.php'); // chash down code if file missing
 
-    function myFuncTwo($age){
-        echo $age;
-    }
-    myFuncTwo(25);
-    echo $age; // undefined variable in this scope - looking for global var
-    echo '<br>';
+    echo 'end of php';
 
-    echo 'global vars:';
-    echo '<br>';
-
-    $name = 'mario';
-    function sayHello(){
-        echo "hello $name"; // undefined variable in this scope - looking for local var
-    }
-    sayHello();
-    echo '<br>';
-
-    $name2 = 'mario';
-    function sayHello2(){
-        global $name2; // using global var
-        $name2 = 'yoshi';
-        echo "hello $name2"; 
-    }
-    sayHello2();
-    echo '<br>';
-    echo $name2;
-    echo '<br>';
-
-    $name3 = 'mario';
-    function sayBye(&$name3){  // var passed by refference
-        $name3 = 'wario'; // changes global var
-        echo "bue $name3"; 
-    }
-    sayBye($name3);
-    echo $name3;
+    
 
 ?>
 
@@ -59,6 +26,8 @@
     <title>PHP Tutorial</title>
 </head>
 <body>
-        
+        <?php include('content.php') ?>
+        <?php include('content.php') ?>
+        <?php include('content.php') ?>
 </body>
 </html>
