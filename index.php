@@ -1,23 +1,54 @@
 <?php 
     
-    echo 'functions:';
+    echo 'variable scope:';
     echo '<br>';
 
-    function sayHello($name = 'alex', $time = 'morning'){
-        echo "good $time $name";
+    echo 'local vars:';
+    echo '<br>';
+
+    function myFunc(){
+        $price = 10;
+        echo $price;
     }    
-
-    sayHello('mario', 'evening');
+    myFunc();
+    echo $price; // undefined variable in this scope - looking for global var
     echo '<br>';
 
-    function formatProduct($product){
-        echo "{$product['name']} costs \${$product['price']} to buy <br>";
+    function myFuncTwo($age){
+        echo $age;
     }
-
-    formatProduct(['name'=>'gold star', 'price'=>20]);
-    $formatted = formatProduct(['name'=>'gold star', 'price'=>20]);
+    myFuncTwo(25);
+    echo $age; // undefined variable in this scope - looking for global var
     echo '<br>';
-    echo $formatted;
+
+    echo 'global vars:';
+    echo '<br>';
+
+    $name = 'mario';
+    function sayHello(){
+        echo "hello $name"; // undefined variable in this scope - looking for local var
+    }
+    sayHello();
+    echo '<br>';
+
+    $name2 = 'mario';
+    function sayHello2(){
+        global $name2; // using global var
+        $name2 = 'yoshi';
+        echo "hello $name2"; 
+    }
+    sayHello2();
+    echo '<br>';
+    echo $name2;
+    echo '<br>';
+
+    $name3 = 'mario';
+    function sayBye(&$name3){  // var passed by refference
+        $name3 = 'wario'; // changes global var
+        echo "bue $name3"; 
+    }
+    sayBye($name3);
+    echo $name3;
 
 ?>
 
