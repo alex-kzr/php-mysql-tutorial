@@ -1,9 +1,13 @@
 <?php
 
-    echo 'ternary operators:';
+    echo 'superglobals:';
     echo '<br>';
 
-    $score = 50;
+    echo $_SERVER['SERVER_NAME'] . '<br>';
+    echo $_SERVER['REQUEST_METHOD'] . '<br>';
+    echo $_SERVER['SCRIPT_FILENAME'] . '<br>';
+    echo $_SERVER['PHP_SELF'] . '<br>';
+
     
 
 ?>
@@ -16,7 +20,7 @@
 </head>
 <body>
     
-    <p><?php echo $score > 40 ? 'high score!' : 'low scrore :('; ?></p>
+    
 
 </body>
 </html>
