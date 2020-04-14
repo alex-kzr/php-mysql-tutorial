@@ -15,6 +15,13 @@
             margin: 20px auto;
             padding: 20px;
         }
+        .pizza{
+            display: block;
+            position: relative;
+            width: 100px;
+            margin: 40px auto -30px;
+            top: -30px;
+        }
     </style>
 </head>
 <body class="grey lighten-4">
