@@ -2,12 +2,14 @@
 
     session_start();
 
-    $name = $_SESSION['name'];
-
     if($_SERVER['QUERY_STRING'] == 'noname'){
-        // unset($_SESSION['name']);
-        session_unset();
+        unset($_SESSION['name']);
+        // session_unset();
     }
+
+    $name = $_SESSION['name'] ?? 'Guest';
+
+    
 
 ?>
 
