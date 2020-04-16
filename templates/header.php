@@ -1,3 +1,17 @@
+<?php
+
+    session_start();
+
+    $name = $_SESSION['name'];
+
+    if($_SERVER['QUERY_STRING'] == 'noname'){
+        // unset($_SESSION['name']);
+        session_unset();
+    }
+
+?>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +43,7 @@
         <div class="container">
             <a href="index.php" class="brand-logo brand-text">Ninja Pizza</a>
             <ul id="nav-moblie" class="right hide-on-small-and-down">
+                <li class="grey-text">Hello <?php echo htmlspecialchars($name); ?></li>
                 <li><a href="add.php" class="btn brand z-depth-0">Add pizza</a></li>
             </ul>
         </div>
